@@ -25,7 +25,7 @@ function Header({ navOpen, setNavOpen }: HeaderProps) {
 
   return (
     <div className={`flex flex-col ${navOpen ? 'h-screen' : ''}`}>
-      <header className="flex items-center justify-between py-5 px-10 bg-slate-300">
+      <header className="flex items-center justify-between py-5 px-10">
         <h1 className="text-center">Jack Agtual</h1>
         <nav>
           <ul className="hidden md:flex items-center justify-evenly space-x-9">
