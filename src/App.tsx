@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import About from './components/About'
+import Skills from './components/Skills'
 
 function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -11,6 +12,7 @@ function App() {
       <Header navOpen={navOpen} setNavOpen={setNavOpen} />
       <main>
         <About />
+        <Skills />
       </main>
     </body>
   )
