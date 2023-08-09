@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="flex flex-col items-center py-10">
+    <div className="flex flex-col items-center">
       <div className="flex flex-col items-center md:items-start space-y-4 mx-4">
         <h1 className="text-center text-5xl">
           Hello, my name is <span className="font-bold">Jack Agtual</span>
