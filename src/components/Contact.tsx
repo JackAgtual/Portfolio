@@ -1,8 +1,25 @@
+import React, { useRef } from 'react'
+import emailjs from '@emailjs/browser'
+
+const SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID
+const TEMPLATE_ID = import.meta.env.VITE_EMAIL_TEMPLATE_ID
+const PUBLIC_KEY = import.meta.env.VITE_EMAIL_PUBLIC_KEY
+
 function Contact() {
+  const form = useRef<HTMLFormElement | null>(null);
+  
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+
+    if (!form.current) return;
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+  }
+  
   return (
     <div>
       <h1 className="text-2xl font-medium text-center mb-6">Contact me</h1>
-      <form className="flex flex-col space-y-5 max-w-screen-lg border mx-auto px-5 md:px-10 py-5 rounded-xl bg-zinc-800">
+      <form ref={form} onSubmit={handleSubmit} className="flex flex-col space-y-5 max-w-screen-lg border mx-auto px-5 md:px-10 py-5 rounded-xl bg-zinc-800">
         <label className="flex flex-col">
           Name
           <input
