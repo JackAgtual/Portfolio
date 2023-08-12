@@ -11,7 +11,7 @@ function App() {
 
   if (navOpen) return <Header navOpen={navOpen} setNavOpen={setNavOpen} />
   return (
-    <body>
+    <>
       <Header navOpen={navOpen} setNavOpen={setNavOpen} />
       <main className="mx-auto py-10 px-5 md:px-20 max-w-screen-2xl space-y-10">
         <About />
@@ -20,7 +20,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
-    </body>
+    </>
   )
 }
 

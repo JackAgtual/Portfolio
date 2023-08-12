@@ -4,8 +4,5 @@
 
 body {
   @apply text-white;
-}
-
-html {
   @apply bg-zinc-900;
 }
