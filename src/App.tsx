@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Header navOpen={navOpen} setNavOpen={setNavOpen} />
-      <main className="mx-auto py-10 px-5 md:px-20 max-w-screen-2xl space-y-10">
+      <main className="mx-auto px-5 md:px-20 max-w-screen-2xl space-y-10">
         <About />
         <Skills />
         <Projects />

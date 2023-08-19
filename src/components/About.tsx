@@ -8,7 +8,7 @@ function About() {
     setReadMoreOpen((prevReadMore) => !prevReadMore)
   }
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center justify-center h-main-vh">
       <div className="flex flex-col items-center md:items-start space-y-4 mx-4 max-w-screen-sm">
         <h1 className="text-center text-5xl">
           Hello, my name is <span className="font-bold">Jack Agtual</span>
