@@ -35,7 +35,14 @@ function Home() {
         </p>
         <div className="flex flex-col md:flex-row gap-y-3 gap-x-4">
           {links.map((link) => {
-            return <LinkButton name={link.name} href={link.href} icon={link.icon} />
+            return (
+              <LinkButton
+                key={link.name}
+                name={link.name}
+                href={link.href}
+                icon={link.icon}
+              />
+            )
           })}
         </div>
         <button className="flex items-center space-x-1">
