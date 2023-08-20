@@ -21,7 +21,7 @@ const links = [
   },
 ]
 
-function About() {
+function Home() {
   const [readMoreOpen, setReadMoreOpen] = useState(false)
 
   const handleReadMoreClick = () => {
@@ -84,4 +84,4 @@ function About() {
   )
 }
 
-export default About
+export default Home

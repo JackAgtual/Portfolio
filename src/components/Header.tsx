@@ -2,14 +2,7 @@ import { useEffect } from 'react'
 import useWindowResize from '../hooks/useWindowResize'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
-const sections = [
-  'About',
-  'Skills',
-  'Projects',
-  'Work Experience',
-  'Education',
-  'Contact',
-]
+const sections = ['Home', 'About', 'Skills', 'Projects', 'Contact']
 const navBreakpointSize = 768 // form tailwind md size
 
 type HeaderProps = {
