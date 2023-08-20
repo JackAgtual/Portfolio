@@ -17,8 +17,8 @@ function App() {
       <main className="mx-auto px-5 md:px-20 max-w-screen-2xl space-y-10">
         <Home />
         <About />
-        <Skills />
         <Projects />
+        <Skills />
         <Contact />
       </main>
       <Footer />
