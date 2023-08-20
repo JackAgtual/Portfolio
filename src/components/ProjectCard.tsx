@@ -1,6 +1,7 @@
 import { FiExternalLink } from 'react-icons/fi'
 import { AiFillGithub, AiOutlineFileGif } from 'react-icons/ai'
 import { Project } from '../types/project'
+import LinkButton from './LinkButton'
 
 type ProjectCardProps = Project
 
@@ -26,24 +27,9 @@ function ProjectCard({
           })}
         </div>
         <div className="flex flex-col flex-wrap space-y-2">
-          <button className="rounded-md px-3 py-1 flex justify-center items-center space-x-2 bg-orange-600/75">
-            <AiFillGithub className="h-6 w-6" />
-            <a href={github} target="_blank">
-              View the source code
-            </a>
-          </button>
-          <button className="rounded-md px-3 py-1 flex justify-center items-center space-x-2 bg-orange-600/75">
-            <FiExternalLink className="h-6 w-6" />
-            <a href={website} target="_blank">
-              Try it out
-            </a>
-          </button>
-          <button className="rounded-md px-3 py-1 flex justify-center items-center space-x-2 bg-orange-600/75">
-            <AiOutlineFileGif className="h-6 w-6" />
-            <a href={gif} target="_blank">
-              Watch a gif
-            </a>
-          </button>
+          <LinkButton name="View the source code" href={github} icon={<AiFillGithub />} />
+          <LinkButton name="Try it out" href={website} icon={<FiExternalLink />} />
+          <LinkButton name="Watch a gif" href={gif} icon={<AiOutlineFileGif />} />
         </div>
       </div>
     </div>

@@ -1,9 +1,10 @@
-import { cloneElement } from 'react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { BsLinkedin, BsFileEarmarkText } from 'react-icons/bs'
 import { AiFillGithub } from 'react-icons/ai'
+import { Link } from '../types/links'
+import LinkButton from './LinkButton'
 
-const links = [
+const links: Link[] = [
   {
     name: 'Resume',
     href: '#',
@@ -34,17 +35,7 @@ function Home() {
         </p>
         <div className="flex flex-col md:flex-row gap-y-3 gap-x-4">
           {links.map((link) => {
-            return (
-              <a
-                key={link.name}
-                href={link.href}
-                target="_blank"
-                className="flex items-center space-x-2 border px-4 py-2 rounded-md"
-              >
-                {cloneElement(link.icon, { className: 'w-6 h-6' })}
-                <p>{link.name}</p>
-              </a>
-            )
+            return <LinkButton name={link.name} href={link.href} icon={link.icon} />
           })}
         </div>
         <button className="flex items-center space-x-1">
