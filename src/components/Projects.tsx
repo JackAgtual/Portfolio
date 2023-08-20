@@ -28,7 +28,7 @@ function Projects() {
       <h1 className="text-2xl font-medium text-center mb-6">
         Here are some projects I've worked on
       </h1>
-      <div className="flex flex-wrap justify-center gap-y-12 gap-x-12">
+      <div className="flex flex-col items-center gap-y-12">
         {projects.map((project) => {
           return (
             <ProjectCard

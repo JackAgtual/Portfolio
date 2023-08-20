@@ -19,7 +19,7 @@ function ProjectCard({
   gif,
 }: ProjectCardProps) {
   return (
-    <div className="max-w-md border-2 border-slate-300 rounded-lg">
+    <div className="max-w-md border-b-2 last:border-b-0 border-slate-300 pb-6">
       <img
         className="aspect-video rounded-lg"
         src={image}
@@ -27,7 +27,7 @@ function ProjectCard({
       />
       <div className="px-4 py-3 space-y-3">
         <h1 className="text-center text-xl font-semibold">{projectName}</h1>
-        <p className="h-12 line-clamp-2">{projectDescription}</p>
+        <p className="text-center">{projectDescription}</p>
         <div className="flex flex-col space-y-2">
           <button className="rounded-md px-3 py-1 flex justify-center items-center space-x-2 bg-orange-600/75">
             <AiFillGithub className="h-6 w-6" />
