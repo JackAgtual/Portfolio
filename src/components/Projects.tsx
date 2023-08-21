@@ -31,7 +31,7 @@ function Projects() {
       <h1 className="text-2xl font-medium text-center mb-6">
         Here are some of my projects
       </h1>
-      <div className="flex flex-col items-center lg:items-start gap-y-12">
+      <div className="flex flex-col items-center lg:items-start gap-y-8">
         {projects.map((project) => {
           return (
             <ProjectCard
