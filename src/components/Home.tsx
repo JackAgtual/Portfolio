@@ -25,11 +25,13 @@ const links: Link[] = [
 function Home() {
   return (
     <div className="flex flex-col items-center justify-center h-main-vh">
-      <div className="flex flex-col items-center md:items-start space-y-4 mx-4 max-w-screen-sm">
-        <h1 className="text-center md:text-left text-5xl">
+      <div className="flex flex-col items-center md:items-start space-y-4 mx-4">
+        <h1 className="text-center md:text-left text-5xl md:text-6xl lg:text-7xl">
           Hello, my name is <span className="font-bold">Jack Agtual</span>
         </h1>
-        <h2 className="text-center text-3xl font-light">I'm a software engineer</h2>
+        <h2 className="text-center text-3xl md:text-4xl lg:text-5xl font-light">
+          I'm a software engineer
+        </h2>
         <p className="text-center">
           This is a small bit about me, my skills, and the work I've done.
         </p>
