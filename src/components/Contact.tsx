@@ -50,7 +50,7 @@ function Contact() {
     <>
       <ToastContainer />
       <div>
-        <h1 className="text-2xl font-medium text-center mb-6">Contact me</h1>
+        <h1 className="text-4xl font-medium text-center mb-6">Contact me</h1>
         <form
           ref={form}
           onSubmit={handleSubmit}

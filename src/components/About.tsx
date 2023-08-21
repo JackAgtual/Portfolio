@@ -1,8 +1,8 @@
 function About() {
   return (
-    <div>
-      <h1 className="text-2xl font-medium text-center mb-6">About Me</h1>
-      <div className="rounded-sm space-y-4 pl-4">
+    <div className="lg:grid lg:grid-cols-2">
+      <h1 className="text-4xl font-medium text-center mb-6 lg:mb-0">About Me</h1>
+      <div className="rounded-sm space-y-4 pl-4 lg:border-s-2">
         <p>
           This is a longer description about me. It'll talk about how I have been working
           as a systems engineer for the past ~2 years and how that work relates to web

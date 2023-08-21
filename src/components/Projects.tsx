@@ -28,7 +28,7 @@ const projects: Project[] = [
 function Projects() {
   return (
     <div>
-      <h1 className="text-2xl font-medium text-center mb-6">
+      <h1 className="text-4xl font-medium text-center mb-6">
         Here are some of my projects
       </h1>
       <div className="flex flex-col items-center lg:items-start gap-y-8">

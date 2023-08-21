@@ -37,7 +37,7 @@ const skillsAndIcons: SkillAndIcon[] = [
 function Skills() {
   return (
     <>
-      <h1 className="text-2xl font-medium text-center mb-6">
+      <h1 className="text-4xl font-medium text-center mb-6">
         Some of my technical skills
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-7 px-2">
