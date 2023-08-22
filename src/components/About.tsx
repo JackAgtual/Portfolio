@@ -4,13 +4,20 @@ function About() {
       <h1 className="text-4xl font-medium text-center mb-6 lg:mb-0">About Me</h1>
       <div className="rounded-sm space-y-4 pl-4 lg:border-s-2">
         <p>
-          This is a longer description about me. It'll talk about how I have been working
-          as a systems engineer for the past ~2 years and how that work relates to web
-          development.
+          I am a frontend-focused web developer. I love building web applications that
+          solve real world problems and making those applications accessible to everyone.
+          I am looking to pivot my career to the web development domain and continue
+          honing my web development skills.
         </p>
         <p>
-          I'll also talk about how I have an engineering degree and how it helps me: think
-          critically using first principles, technical learning, technical communication
+          I currently work as a systems engineer at Northrop Grumman. I write software in
+          a language similar to C# or Java to create physics-based models of aircraft
+          interactions. I'm responsible for adding new features to the models, conducting
+          code reviews, and briefing analysis packages to stakeholders.
+        </p>
+        <p>
+          I graduated summa cum laude from San Diego State University with a bachelor's
+          degree in mechanical engineering.
         </p>
       </div>
     </div>
