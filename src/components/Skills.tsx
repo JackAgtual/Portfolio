@@ -8,11 +8,10 @@ import {
   SiTailwindcss,
   SiRedux,
   SiGit,
-  SiAtlassian,
   SiNodedotjs,
   SiJest,
 } from 'react-icons/si'
-import { FaReact } from 'react-icons/fa'
+import { FaReact, FaJira, FaPython } from 'react-icons/fa'
 
 type SkillAndIcon = {
   skill: string
@@ -25,13 +24,14 @@ const skillsAndIcons: SkillAndIcon[] = [
   { skill: 'JavaScript & TypeScript', icon: <SiTypescript /> },
   { skill: 'React JS', icon: <FaReact /> },
   { skill: 'Git', icon: <SiGit /> },
-  { skill: 'Bitbucket, Jira & Confluence', icon: <SiAtlassian /> },
   { skill: 'Jest', icon: <SiJest /> },
   { skill: 'Material UI', icon: <SiMui /> },
   { skill: 'Tailwind CSS', icon: <SiTailwindcss /> },
   { skill: 'Firebase', icon: <SiFirebase /> },
   { skill: 'Redux Toolkit', icon: <SiRedux /> },
   { skill: 'Node JS & Express', icon: <SiNodedotjs /> },
+  { skill: 'Python', icon: <FaPython /> },
+  { skill: 'Jira', icon: <FaJira /> },
 ]
 
 function Skills() {
