@@ -16,13 +16,12 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div className="flex flex-col lg:flex-row w-full gap-y-3 border-b-2 last:border-b-0 border-slate-300 pb-6">
-      <a href={image} target="_blank">
-        <img
-          className="rounded-lg mx-auto lg:mx-0 h-full object-cover w-full max-w-md"
-          src={image}
-          alt={`${name} screenshot`}
-        />
-      </a>
+      <img
+        className="rounded-lg mx-auto lg:mx-0 h-full object-cover w-full max-w-md cursor-pointer"
+        src={image}
+        alt={`${name} screenshot`}
+        onClick={() => window.open(image, '_blank')}
+      />
 
       <div className="lg:pl-4 space-y-4">
         <h1 className="text-center lg:text-left text-2xl font-semibold">{name}</h1>
