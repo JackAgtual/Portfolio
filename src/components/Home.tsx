@@ -1,7 +1,9 @@
+import { forwardRef, ForwardedRef } from 'react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
 import { BsLinkedin, BsFileEarmarkText } from 'react-icons/bs'
 import { AiFillGithub } from 'react-icons/ai'
 import { Link } from '../types/links'
+import { DivRef } from '../types/sections'
 import LinkButton from './LinkButton'
 
 const links: Link[] = [
@@ -22,9 +24,17 @@ const links: Link[] = [
   },
 ]
 
-function Home() {
+type HomeProps = {
+  readMoreRef: DivRef
+}
+
+function Home({ readMoreRef }: HomeProps, ref: ForwardedRef<HTMLDivElement>) {
+  const handleReadMoreClick = () => {
+    readMoreRef?.current?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <div className="flex flex-col items-center justify-center h-main-vh">
+    <div ref={ref} className="flex flex-col items-center justify-center h-main-vh">
       <div className="flex flex-col items-center md:items-start space-y-4 mx-4">
         <h1 className="text-center md:text-left text-5xl md:text-6xl lg:text-7xl">
           Hello, my name is <span className="font-bold">Jack Agtual</span>
@@ -47,7 +57,7 @@ function Home() {
             )
           })}
         </div>
-        <button className="flex items-center space-x-1">
+        <button onClick={handleReadMoreClick} className="flex items-center space-x-1">
           <MdKeyboardArrowDown className="w-6 h-6" />
           <p className="underline underline-offset-2">Read more</p>
         </button>
@@ -56,4 +66,4 @@ function Home() {
   )
 }
 
-export default Home
+export default forwardRef(Home)

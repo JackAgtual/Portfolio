@@ -1,16 +1,17 @@
 import { useEffect } from 'react'
 import useWindowResize from '../hooks/useWindowResize'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
+import { Section } from '../types/sections'
 
-const sections = ['Home', 'About', 'Skills', 'Projects', 'Contact']
 const navBreakpointSize = 768 // form tailwind md size
 
 type HeaderProps = {
   navOpen: boolean
   setNavOpen: React.Dispatch<React.SetStateAction<boolean>>
+  sections: Section[]
 }
 
-function Header({ navOpen, setNavOpen }: HeaderProps) {
+function Header({ navOpen, setNavOpen, sections }: HeaderProps) {
   const windowWidth = useWindowResize()
 
   useEffect(() => {
@@ -23,6 +24,11 @@ function Header({ navOpen, setNavOpen }: HeaderProps) {
     setNavOpen((prevNavOpen) => !prevNavOpen)
   }
 
+  const handleSectionClick = (section: Section) => {
+    setNavOpen(false)
+    setTimeout(() => section.ref?.current?.scrollIntoView({ behavior: 'smooth' }))
+  }
+
   return (
     <div className={`flex flex-col ${navOpen ? 'h-screen' : ''}`}>
       <header className="flex items-center justify-between py-5 px-10">
@@ -31,8 +37,10 @@ function Header({ navOpen, setNavOpen }: HeaderProps) {
           <ul className="hidden md:flex items-center justify-evenly space-x-9">
             {sections.map((section) => {
               return (
-                <li key={section}>
-                  <button>{section}</button>
+                <li key={section.name}>
+                  <button onClick={() => handleSectionClick(section)}>
+                    {section.name}
+                  </button>
                 </li>
               )
             })}
@@ -51,8 +59,13 @@ function Header({ navOpen, setNavOpen }: HeaderProps) {
           <ul className="flex h-full flex-col items-center">
             {sections.map((section) => {
               return (
-                <li key={section} className="flex flex-col justify-center grow">
-                  <button className="w-screen py-5">{section}</button>
+                <li key={section.name} className="flex flex-col justify-center grow">
+                  <button
+                    onClick={() => handleSectionClick(section)}
+                    className="w-screen py-5"
+                  >
+                    {section.name}
+                  </button>
                 </li>
               )
             })}

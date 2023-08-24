@@ -1,3 +1,4 @@
+import { forwardRef, ForwardedRef } from 'react'
 import netWorthTrackerScreenshot from '../assets/net-worth-tracker/screenshot.png'
 import travelPlannerScreenshot from '../assets/travel-planner/screenshot.png'
 import ProjectCard from './ProjectCard'
@@ -26,9 +27,9 @@ const projects: Project[] = [
   },
 ]
 
-function Projects() {
+function Projects({}, ref: ForwardedRef<HTMLDivElement>) {
   return (
-    <div>
+    <div ref={ref}>
       <SectionTitle>Here are some of my projects</SectionTitle>
       <div className="flex flex-col items-center lg:items-start gap-y-8">
         {projects.map((project) => {
@@ -50,4 +51,4 @@ function Projects() {
   )
 }
 
-export default Projects
+export default forwardRef(Projects)

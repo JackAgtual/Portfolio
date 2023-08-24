@@ -1,8 +1,9 @@
+import { forwardRef, ForwardedRef } from 'react'
 import SectionTitle from './SectionTitle'
 
-function About() {
+function About({}, ref: ForwardedRef<HTMLDivElement>) {
   return (
-    <div>
+    <div ref={ref}>
       <SectionTitle>About me</SectionTitle>
       <div className="space-y-5 max-w-screen-md mx-auto">
         <p className="text-center sm:text-left">
@@ -26,4 +27,4 @@ function About() {
   )
 }
 
-export default About
+export default forwardRef(About)

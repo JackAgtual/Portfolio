@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, forwardRef, ForwardedRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -8,7 +8,7 @@ const SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAIL_TEMPLATE_ID
 const PUBLIC_KEY = import.meta.env.VITE_EMAIL_PUBLIC_KEY
 
-function Contact() {
+function Contact({}, ref: ForwardedRef<HTMLDivElement>) {
   const form = useRef<HTMLFormElement | null>(null)
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -48,7 +48,7 @@ function Contact() {
   }
 
   return (
-    <div>
+    <div ref={ref}>
       <ToastContainer />
       <div>
         <SectionTitle>Contact me</SectionTitle>
@@ -102,4 +102,4 @@ function Contact() {
   )
 }
 
-export default Contact
+export default forwardRef(Contact)

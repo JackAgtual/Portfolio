@@ -1,4 +1,4 @@
-import { cloneElement, ReactElement } from 'react'
+import { cloneElement, ReactElement, forwardRef, ForwardedRef } from 'react'
 import {
   SiHtml5,
   SiTypescript,
@@ -35,9 +35,9 @@ const skillsAndIcons: SkillAndIcon[] = [
   { skill: 'Jira', icon: <FaJira /> },
 ]
 
-function Skills() {
+function Skills({}, ref: ForwardedRef<HTMLDivElement>) {
   return (
-    <div>
+    <div ref={ref}>
       <SectionTitle>Some of my technical skills</SectionTitle>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-7 px-2">
         {skillsAndIcons.map(({ skill, icon }) => {
@@ -53,4 +53,4 @@ function Skills() {
   )
 }
 
-export default Skills
+export default forwardRef(Skills)
