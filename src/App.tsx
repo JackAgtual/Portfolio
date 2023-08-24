@@ -6,6 +6,7 @@ import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import About from './components/About'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [navOpen, setNavOpen] = useState(false)
@@ -35,6 +36,7 @@ function App() {
         <Contact ref={contactRef} />
       </main>
       <Footer />
+      <ScrollToTop />
     </>
   )
 }
