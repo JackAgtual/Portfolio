@@ -2,6 +2,7 @@ import netWorthTrackerScreenshot from '../assets/net-worth-tracker/screenshot.pn
 import travelPlannerScreenshot from '../assets/travel-planner/screenshot.png'
 import ProjectCard from './ProjectCard'
 import { Project } from '../types/project'
+import SectionTitle from './SectionTitle'
 
 const projects: Project[] = [
   {
@@ -28,9 +29,7 @@ const projects: Project[] = [
 function Projects() {
   return (
     <div>
-      <h1 className="text-4xl font-medium text-center mb-6">
-        Here are some of my projects
-      </h1>
+      <SectionTitle>Here are some of my projects</SectionTitle>
       <div className="flex flex-col items-center lg:items-start gap-y-8">
         {projects.map((project) => {
           return (

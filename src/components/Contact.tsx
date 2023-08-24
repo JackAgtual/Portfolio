@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import SectionTitle from './SectionTitle'
 
 const SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID
 const TEMPLATE_ID = import.meta.env.VITE_EMAIL_TEMPLATE_ID
@@ -47,10 +48,10 @@ function Contact() {
   }
 
   return (
-    <>
+    <div>
       <ToastContainer />
       <div>
-        <h1 className="text-4xl font-medium text-center mb-6">Contact me</h1>
+        <SectionTitle>Contact me</SectionTitle>
         <form
           ref={form}
           onSubmit={handleSubmit}
@@ -97,7 +98,7 @@ function Contact() {
           </button>
         </form>
       </div>
-    </>
+    </div>
   )
 }
 

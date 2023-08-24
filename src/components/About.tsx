@@ -1,7 +1,9 @@
+import SectionTitle from './SectionTitle'
+
 function About() {
   return (
     <div>
-      <h1 className="text-4xl font-medium text-center mb-5">About Me</h1>
+      <SectionTitle>About me</SectionTitle>
       <div className="space-y-5 max-w-screen-md mx-auto">
         <p className="text-center sm:text-left">
           I am a frontend-focused web developer. I love building web applications that

@@ -12,6 +12,7 @@ import {
   SiJest,
 } from 'react-icons/si'
 import { FaReact, FaJira, FaPython } from 'react-icons/fa'
+import SectionTitle from './SectionTitle'
 
 type SkillAndIcon = {
   skill: string
@@ -36,10 +37,8 @@ const skillsAndIcons: SkillAndIcon[] = [
 
 function Skills() {
   return (
-    <>
-      <h1 className="text-4xl font-medium text-center mb-6">
-        Some of my technical skills
-      </h1>
+    <div>
+      <SectionTitle>Some of my technical skills</SectionTitle>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-7 px-2">
         {skillsAndIcons.map(({ skill, icon }) => {
           return (
@@ -50,7 +49,7 @@ function Skills() {
           )
         })}
       </div>
-    </>
+    </div>
   )
 }
 
