@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import useWindowResize from '../hooks/useWindowResize'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { Section } from '../types/sections'
@@ -13,6 +13,7 @@ type HeaderProps = {
 
 function Header({ navOpen, setNavOpen, sections }: HeaderProps) {
   const windowWidth = useWindowResize()
+  const headerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (navOpen && windowWidth > navBreakpointSize) {
@@ -26,11 +27,22 @@ function Header({ navOpen, setNavOpen, sections }: HeaderProps) {
 
   const handleSectionClick = (section: Section) => {
     setNavOpen(false)
-    setTimeout(() => section.ref?.current?.scrollIntoView({ behavior: 'smooth' }))
+    setTimeout(() => {
+      const headerHeight = headerRef.current?.clientHeight
+      const sectionPosition = section.ref?.current?.getBoundingClientRect().top
+
+      if (!headerHeight || !sectionPosition) return
+      const scrollPosition = sectionPosition + window.scrollY - headerHeight
+
+      window.scrollTo({ top: scrollPosition, behavior: 'smooth' })
+    })
   }
 
   return (
-    <div className={`flex flex-col ${navOpen ? 'h-screen' : ''}`}>
+    <div
+      ref={headerRef}
+      className={`sticky top-0 flex flex-col ${navOpen ? 'h-screen' : ''} bg-zinc-900`}
+    >
       <header className="flex items-center justify-between py-5 px-10">
         <h1 className="text-center">Jack Agtual</h1>
         <nav>
