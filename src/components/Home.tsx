@@ -42,9 +42,6 @@ function Home({ readMoreRef }: HomeProps, ref: ForwardedRef<HTMLDivElement>) {
         <h2 className="text-center text-3xl md:text-4xl lg:text-5xl font-light">
           I'm a software engineer
         </h2>
-        <p className="text-center">
-          This is a small bit about me, my skills, and the work I've done.
-        </p>
         <div className="flex flex-col md:flex-row gap-y-3 gap-x-4">
           {links.map((link) => {
             return (

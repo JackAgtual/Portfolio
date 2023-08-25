@@ -5,7 +5,7 @@ type SectionTitleProps = {
 }
 
 function SectionTitle({ children }: SectionTitleProps) {
-  return <h1 className="text-4xl font-medium text-center mb-10">{children}</h1>
+  return <h1 className="text-4xl font-medium text-center py-10">{children}</h1>
 }
 
 export default SectionTitle

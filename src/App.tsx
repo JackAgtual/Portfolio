@@ -23,17 +23,22 @@ function App() {
     { name: 'Skills', ref: skillsRef },
     { name: 'Contact', ref: contactRef },
   ]
-  if (navOpen)
+
+  if (navOpen) {
     return <Header navOpen={navOpen} setNavOpen={setNavOpen} sections={sections} />
+  }
+
   return (
     <>
       <Header navOpen={navOpen} setNavOpen={setNavOpen} sections={sections} />
-      <main className="mx-auto px-5 sm:px-10 md:px-20 max-w-screen-2xl space-y-10">
+      <main className="mx-auto px-5 pb-10 sm:px-10 md:px-20 max-w-screen-2xl">
         <Home ref={homeRef} readMoreRef={aboutRef} />
-        <About ref={aboutRef} />
-        <Projects ref={projectsRef} />
-        <Skills ref={skillsRef} />
-        <Contact ref={contactRef} />
+        <div className="space-y-20">
+          <About ref={aboutRef} />
+          <Projects ref={projectsRef} />
+          <Skills ref={skillsRef} />
+          <Contact ref={contactRef} />
+        </div>
       </main>
       <Footer />
       <ScrollToTop />
