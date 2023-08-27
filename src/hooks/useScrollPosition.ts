@@ -1,15 +1,7 @@
 import { useState, useEffect } from 'react'
 
-function useScrollPosition(): [boolean, () => void] {
+function useScrollPosition() {
   const [atTop, setAtTop] = useState(true)
-
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    })
-  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +19,7 @@ function useScrollPosition(): [boolean, () => void] {
     }
   }, [])
 
-  return [atTop, scrollToTop]
+  return atTop
 }
 
 export default useScrollPosition

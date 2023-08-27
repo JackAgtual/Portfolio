@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react'
 import useWindowResize from '../hooks/useWindowResize'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { Section } from '../types/sections'
+import Scroll from '../utils/Scroll'
 
 const navBreakpointSize = 768 // form tailwind md size
 
@@ -28,13 +29,7 @@ function Header({ navOpen, setNavOpen, sections }: HeaderProps) {
   const handleSectionClick = (section: Section) => {
     setNavOpen(false)
     setTimeout(() => {
-      const headerHeight = headerRef.current?.clientHeight
-      const sectionPosition = section.ref?.current?.getBoundingClientRect().top
-
-      if (!headerHeight || !sectionPosition) return
-      const scrollPosition = sectionPosition + window.scrollY - headerHeight
-
-      window.scrollTo({ top: scrollPosition, behavior: 'smooth' })
+      Scroll.scrollToRefWithOffset(section.ref, headerRef)
     })
   }
 
