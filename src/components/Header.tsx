@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, forwardRef, ForwardedRef } from 'react'
 import useWindowResize from '../hooks/useWindowResize'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { Section } from '../types/sections'
@@ -12,9 +12,11 @@ type HeaderProps = {
   sections: Section[]
 }
 
-function Header({ navOpen, setNavOpen, sections }: HeaderProps) {
+function Header(
+  { navOpen, setNavOpen, sections }: HeaderProps,
+  ref: ForwardedRef<HTMLDivElement>,
+) {
   const windowWidth = useWindowResize()
-  const headerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     if (navOpen && windowWidth > navBreakpointSize) {
@@ -29,13 +31,14 @@ function Header({ navOpen, setNavOpen, sections }: HeaderProps) {
   const handleSectionClick = (section: Section) => {
     setNavOpen(false)
     setTimeout(() => {
-      Scroll.scrollToRefWithOffset(section.ref, headerRef)
+      if (!ref || typeof ref === 'function') return
+      Scroll.scrollToRefWithRefOffset(section.ref, ref)
     })
   }
 
   return (
     <div
-      ref={headerRef}
+      ref={ref}
       className={`sticky top-0 flex flex-col ${navOpen ? 'h-screen' : ''} bg-zinc-900`}
     >
       <header className="flex items-center justify-between py-5 px-10">
@@ -83,4 +86,4 @@ function Header({ navOpen, setNavOpen, sections }: HeaderProps) {
   )
 }
 
-export default Header
+export default forwardRef(Header)

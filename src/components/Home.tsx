@@ -5,6 +5,7 @@ import { AiFillGithub } from 'react-icons/ai'
 import { Link } from '../types/links'
 import { DivRef } from '../types/sections'
 import LinkButton from './LinkButton'
+import Scroll from '../utils/Scroll'
 
 const links: Link[] = [
   {
@@ -26,11 +27,12 @@ const links: Link[] = [
 
 type HomeProps = {
   readMoreRef: DivRef
+  offsetRef: DivRef
 }
 
-function Home({ readMoreRef }: HomeProps, ref: ForwardedRef<HTMLDivElement>) {
+function Home({ readMoreRef, offsetRef }: HomeProps, ref: ForwardedRef<HTMLDivElement>) {
   const handleReadMoreClick = () => {
-    readMoreRef?.current?.scrollIntoView({ behavior: 'smooth' })
+    Scroll.scrollToRefWithRefOffset(readMoreRef, offsetRef)
   }
 
   return (

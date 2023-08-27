@@ -10,6 +10,8 @@ import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   const [navOpen, setNavOpen] = useState(false)
+
+  const headerRef = useRef<HTMLDivElement>(null)
   const homeRef = useRef<HTMLDivElement>(null)
   const aboutRef = useRef<HTMLDivElement>(null)
   const projectsRef = useRef<HTMLDivElement>(null)
@@ -25,14 +27,26 @@ function App() {
   ]
 
   if (navOpen) {
-    return <Header navOpen={navOpen} setNavOpen={setNavOpen} sections={sections} />
+    return (
+      <Header
+        ref={headerRef}
+        navOpen={navOpen}
+        setNavOpen={setNavOpen}
+        sections={sections}
+      />
+    )
   }
 
   return (
     <>
-      <Header navOpen={navOpen} setNavOpen={setNavOpen} sections={sections} />
+      <Header
+        ref={headerRef}
+        navOpen={navOpen}
+        setNavOpen={setNavOpen}
+        sections={sections}
+      />
       <main className="mx-auto px-5 pb-10 sm:px-10 md:px-20 max-w-screen-2xl">
-        <Home ref={homeRef} readMoreRef={aboutRef} />
+        <Home ref={homeRef} readMoreRef={aboutRef} offsetRef={headerRef} />
         <div className="space-y-20">
           <About ref={aboutRef} />
           <Projects ref={projectsRef} />
