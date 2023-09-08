@@ -9,7 +9,7 @@ function ScrollToTop() {
 
   return (
     <button
-      className="fixed bottom-6 right-6 rounded-full px-2 py-2 bg-orange-500"
+      className="fixed bottom-6 right-6 rounded-full px-2 py-2 bg-tertiary-bg"
       onClick={Scroll.scrollToTop}
     >
       <AiOutlineArrowUp className="mx-auto w-5 h-5" />

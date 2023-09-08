@@ -55,7 +55,7 @@ function Contact({}, ref: ForwardedRef<HTMLDivElement>) {
         <form
           ref={form}
           onSubmit={handleSubmit}
-          className="flex flex-col space-y-5 max-w-screen-lg border mx-auto px-5 md:px-10 py-5 rounded-xl bg-zinc-800"
+          className="flex flex-col space-y-5 max-w-screen-lg mx-auto px-5 md:px-10 py-5 rounded-xl"
         >
           <label className="flex flex-col">
             Name
@@ -63,7 +63,7 @@ function Contact({}, ref: ForwardedRef<HTMLDivElement>) {
               type="text"
               name="name"
               required
-              className="text-black px-2 py-2 rounded-sm"
+              className="text-black px-2 py-2 rounded-sm border"
             />
           </label>
           <label className="flex flex-col">
@@ -72,7 +72,7 @@ function Contact({}, ref: ForwardedRef<HTMLDivElement>) {
               type="email"
               name="email"
               required
-              className="text-black px-2 py-2 rounded-sm"
+              className="text-black px-2 py-2 rounded-sm border"
             />
           </label>
           <label className="flex flex-col">
@@ -81,7 +81,7 @@ function Contact({}, ref: ForwardedRef<HTMLDivElement>) {
               type="text"
               name="subject"
               required
-              className="text-black px-2 py-2 rounded-sm"
+              className="text-black px-2 py-2 rounded-sm border"
             />
           </label>
           <label className="flex flex-col">
@@ -90,10 +90,13 @@ function Contact({}, ref: ForwardedRef<HTMLDivElement>) {
               name="message"
               rows={5}
               required
-              className="text-black px-2 py-2 rounded-sm"
+              className="text-black px-2 py-2 rounded-sm border"
             />
           </label>
-          <button type="submit" className="rounded-md py-3 bg-orange-500">
+          <button
+            type="submit"
+            className="rounded-md py-3 bg-secondary-bg text-white hover:brightness-110 transition-all"
+          >
             Send
           </button>
         </form>

@@ -3,7 +3,7 @@ import { AiFillGithub } from 'react-icons/ai'
 
 function Footer() {
   return (
-    <footer className="flex justify-center items-center space-x-14 h-16">
+    <footer className="flex justify-center items-center space-x-14 h-16 bg-primary-bg">
       <a href="https://www.linkedin.com/in/jack-agtual/" target="_blank">
         <BsLinkedin className="w-10 h-10" />
       </a>

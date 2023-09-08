@@ -15,7 +15,7 @@ function ProjectCard({
   gif,
 }: ProjectCardProps) {
   return (
-    <div className="flex flex-col lg:flex-row w-full gap-y-3 border-b-2 last:border-b-0 border-slate-300 pb-6">
+    <div className="flex flex-col lg:flex-row w-full gap-y-3 border-b-2 last:border-b-0 border-black pb-6">
       <img
         className="rounded-lg mx-auto lg:mx-0 h-full object-cover w-full max-w-md cursor-pointer"
         src={image}

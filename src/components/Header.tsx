@@ -39,7 +39,9 @@ function Header(
   return (
     <div
       ref={ref}
-      className={`sticky top-0 flex flex-col ${navOpen ? 'h-screen' : ''} bg-zinc-900`}
+      className={`sticky top-0 flex flex-col ${
+        navOpen ? 'h-screen' : ''
+      } bg-secondary-bg text-secondary-text`}
     >
       <header className="flex items-center justify-between py-5 px-10">
         <h1 className="text-center">Jack Agtual</h1>
