@@ -1,7 +1,5 @@
 import { forwardRef, ForwardedRef } from 'react'
 import { MdKeyboardArrowDown } from 'react-icons/md'
-import { BsLinkedin, BsFileEarmarkText } from 'react-icons/bs'
-import { AiFillGithub } from 'react-icons/ai'
 import { Link } from '../types/links'
 import { DivRef } from '../types/sections'
 import LinkButton from './LinkButton'
@@ -11,17 +9,14 @@ const links: Link[] = [
   {
     name: 'Resume',
     href: '#',
-    icon: <BsFileEarmarkText />,
   },
   {
     name: 'LinkedIn',
     href: 'https://www.linkedin.com/in/jack-agtual/',
-    icon: <BsLinkedin />,
   },
   {
     name: 'GitHub',
     href: 'https://github.com/JackAgtual',
-    icon: <AiFillGithub />,
   },
 ]
 
@@ -46,14 +41,7 @@ function Home({ readMoreRef, offsetRef }: HomeProps, ref: ForwardedRef<HTMLDivEl
         </h2>
         <div className="flex flex-col md:flex-row gap-y-3 gap-x-4">
           {links.map((link) => {
-            return (
-              <LinkButton
-                key={link.name}
-                name={link.name}
-                href={link.href}
-                icon={link.icon}
-              />
-            )
+            return <LinkButton key={link.name} name={link.name} href={link.href} />
           })}
         </div>
         <button onClick={handleReadMoreClick} className="flex items-center space-x-1">

@@ -1,5 +1,3 @@
-import { FiExternalLink } from 'react-icons/fi'
-import { AiFillGithub, AiOutlineFileGif } from 'react-icons/ai'
 import { Project } from '../types/project'
 import LinkButton from './LinkButton'
 
@@ -39,9 +37,9 @@ function ProjectCard({
           </div>
         </div>
         <div className="flex flex-col sm:flex-row items-center flex-wrap gap-y-3 gap-x-2">
-          <LinkButton name="View the source code" href={github} icon={<AiFillGithub />} />
-          <LinkButton name="Try it out" href={website} icon={<FiExternalLink />} />
-          <LinkButton name="Watch a gif" href={gif} icon={<AiOutlineFileGif />} />
+          <LinkButton name="View the source code" href={github} />
+          <LinkButton name="Try it out" href={website} />
+          <LinkButton name="Watch a gif" href={gif} />
         </div>
       </div>
     </div>
