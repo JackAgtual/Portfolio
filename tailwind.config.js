@@ -7,8 +7,8 @@ export default {
         'main-vh': 'calc(100vh - 64px)',
       },
       backgroundColor: {
-        'primary-bg': '#f5f5f4',
-        'secondary-bg': '#7c9d47',
+        'primary-bg': 'FFFFFF',
+        'secondary-bg': '#91AF65',
         'tertiary-bg': '#d1d5db',
       },
       textColor: {
