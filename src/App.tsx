@@ -45,10 +45,10 @@ function App() {
         setNavOpen={setNavOpen}
         sections={sections}
       />
-      <main className="mx-auto px-5 pb-10 sm:px-10 md:px-20 max-w-screen-2xl">
+      <main className="flex flex-col items-center px-5 pb-10 sm:px-10 md:px-20">
         <Home ref={homeRef} readMoreRef={aboutRef} offsetRef={headerRef} />
-        <div className="space-y-20">
-          <About ref={aboutRef} />
+        <About ref={aboutRef} />
+        <div className="space-y-20 max-w-screen-xl">
           <Projects ref={projectsRef} />
           <Skills ref={skillsRef} />
           <Contact ref={contactRef} />
