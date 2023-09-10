@@ -13,34 +13,30 @@ function ProjectCard({
   gif,
 }: ProjectCardProps) {
   return (
-    <div className="flex flex-col lg:flex-row w-full gap-y-3 border-b-2 last:border-b-0 border-black pb-6">
-      <img
-        className="rounded-lg mx-auto lg:mx-0 h-full object-cover w-full max-w-md cursor-pointer"
-        src={image}
-        alt={`${name} screenshot`}
-        onClick={() => window.open(image, '_blank')}
-      />
-
-      <div className="lg:pl-4 space-y-4">
-        <h1 className="text-center lg:text-left text-2xl font-semibold">{name}</h1>
-        <p className="text-center sm:text-left">{description}</p>
+    <div className=" bg-blue-100 p-5 rounded-lg">
+      <div className="grid grid-cols-2">
         <div>
-          <h2 className="text-center sm:text-left lg:text-left text-xl">Made with:</h2>
-          <div className="flex justify-center sm:justify-start flex-wrap gap-x-5">
-            {madeWith.map((item) => {
-              return (
-                <p key={item} className="min-w-fit">
-                  {item}
-                </p>
-              )
-            })}
+          <h1 className="text-3xl font-bold">{name}</h1>
+          <p className="text-sm pt-3">{description}</p>
+          <div>
+            <h2 className="text-lg font-semibold pt-5">Made with:</h2>
+            <ul className="grid grid-cols-2 gap-y-2">
+              {madeWith.map((item) => {
+                return (
+                  <li key={item} className="text-sm break-words">
+                    {item}
+                  </li>
+                )
+              })}
+            </ul>
           </div>
         </div>
-        <div className="flex flex-col sm:flex-row items-center flex-wrap gap-y-3 gap-x-2">
-          <LinkButton name="View the source code" href={github} />
-          <LinkButton name="Try it out" href={website} />
-          <LinkButton name="Watch a gif" href={gif} />
-        </div>
+        <img src={image} alt={`${name} screenshot`} className="max-h-64 mx-auto" />
+      </div>
+      <div className="grid grid-cols-3 gap-x-2 pt-5">
+        <LinkButton name="Try it out" href={website} smallSize={true} />
+        <LinkButton name="Watch a gif" href={gif} smallSize={true} />
+        <LinkButton name="Code" href={github} smallSize={true} />
       </div>
     </div>
   )

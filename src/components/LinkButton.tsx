@@ -1,11 +1,19 @@
 import { Link } from '../types/links'
 
-type LinkProps = Link & { target?: '_blank' | '_self' | '_parent' | '_top' }
+type LinkProps = Link & {
+  smallSize?: boolean
+  target?: '_blank' | '_self' | '_parent' | '_top'
+}
 
-function LinkButton({ name, href, target = '_blank' }: LinkProps) {
+function LinkButton({ name, href, target = '_blank', smallSize = false }: LinkProps) {
+  const commonClasses =
+    'border-black py-2 rounded-lg hover:bg-tertiary-bg hover:bg-opacity-50 transition-all'
+
+  const sizeClasses = smallSize ? 'border px-2 text-sm' : 'border-2 px-4'
+
   return (
     <button
-      className="flex items-center justify-center space-x-2 border-2 border-black px-4 py-2 rounded-lg hover:bg-tertiary-bg hover:bg-opacity-50 transition-all"
+      className={commonClasses.concat(' ', sizeClasses)}
       onClick={() => window.open(href, target)}
     >
       {name}
