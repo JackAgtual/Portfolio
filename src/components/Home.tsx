@@ -31,17 +31,27 @@ function Home({ readMoreRef, offsetRef }: HomeProps, ref: ForwardedRef<HTMLDivEl
   }
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center h-main-vh">
-      <div className="flex flex-col items-center md:items-start space-y-4 mx-4">
-        <h1 className="text-center md:text-left text-5xl md:text-6xl lg:text-7xl">
-          Hello, my name is <span className="font-bold">Jack Agtual</span>
+    <div
+      ref={ref}
+      className="flex flex-col items-center justify-center h-main-vh mx-auto"
+    >
+      <div className="flex flex-col md:items-start space-y-4">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl">
+          Hello, <br /> my name is <span className="font-bold">Jack Agtual</span>
         </h1>
-        <h2 className="text-center text-3xl md:text-4xl lg:text-5xl font-light">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-light">
           I'm a software engineer
         </h2>
-        <div className="flex flex-col md:flex-row gap-y-3 gap-x-4">
+        <div className="flex gap-x-4">
           {links.map((link) => {
-            return <LinkButton key={link.name} name={link.name} href={link.href} />
+            return (
+              <LinkButton
+                key={link.name}
+                name={link.name}
+                href={link.href}
+                className="max-sm:text-sm"
+              />
+            )
           })}
         </div>
         <button onClick={handleReadMoreClick} className="flex items-center space-x-1">
