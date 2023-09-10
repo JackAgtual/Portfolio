@@ -1,19 +1,19 @@
+import React from 'react'
 import { Link } from '../types/links'
+import { twMerge } from 'tailwind-merge'
 
-type LinkProps = Link & {
-  smallSize?: boolean
-  target?: '_blank' | '_self' | '_parent' | '_top'
-}
+type LinkButtonProps = Link &
+  Pick<React.ButtonHTMLAttributes<HTMLButtonElement>, 'className'> & {
+    target?: '_blank' | '_self' | '_parent' | '_top'
+  }
 
-function LinkButton({ name, href, target = '_blank', smallSize = false }: LinkProps) {
-  const commonClasses =
-    'border-black py-2 rounded-lg hover:bg-tertiary-bg hover:bg-opacity-50 transition-all'
-
-  const sizeClasses = smallSize ? 'border px-2 text-sm' : 'border-2 px-4'
-
+function LinkButton({ name, href, target = '_blank', className }: LinkButtonProps) {
   return (
     <button
-      className={commonClasses.concat(' ', sizeClasses)}
+      className={twMerge(
+        'border-black border-2 py-2 px-4 rounded-lg hover:bg-tertiary-bg hover:bg-opacity-50 transition-all',
+        className,
+      )}
       onClick={() => window.open(href, target)}
     >
       {name}
