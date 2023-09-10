@@ -3,8 +3,7 @@ import useWindowResize from '../hooks/useWindowResize'
 import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 import { Section } from '../types/sections'
 import Scroll from '../utils/Scroll'
-
-const navBreakpointSize = 768 // form tailwind md size
+import { breakpoints } from '../utils/breakpoints'
 
 type HeaderProps = {
   navOpen: boolean
@@ -19,7 +18,7 @@ function Header(
   const windowWidth = useWindowResize()
 
   useEffect(() => {
-    if (navOpen && windowWidth > navBreakpointSize) {
+    if (navOpen && windowWidth > breakpoints.md) {
       setNavOpen(false)
     }
   }, [windowWidth])

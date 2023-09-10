@@ -1,5 +1,8 @@
+import { useEffect, useState } from 'react'
+import useWindowResize from '../hooks/useWindowResize'
 import { Project } from '../types/project'
 import LinkButton from './LinkButton'
+import { breakpoints } from '../utils/breakpoints'
 
 type ProjectCardProps = Project
 
@@ -7,11 +10,23 @@ function ProjectCard({
   name,
   description,
   madeWith,
-  image,
+  smallImage,
+  largeImage,
   github,
   website,
   gif,
 }: ProjectCardProps) {
+  const windowSize = useWindowResize()
+  const [smallDisplayImage, setSmallDisplayImage] = useState(true)
+
+  useEffect(() => {
+    if (windowSize >= breakpoints.md && smallDisplayImage) {
+      setSmallDisplayImage(false)
+    } else if (windowSize < breakpoints.md && !smallDisplayImage) {
+      setSmallDisplayImage(true)
+    }
+  }, [windowSize])
+
   return (
     <div className=" bg-blue-100 p-5 rounded-lg">
       <div className="grid grid-cols-2">
@@ -31,7 +46,11 @@ function ProjectCard({
             </ul>
           </div>
         </div>
-        <img src={image} alt={`${name} screenshot`} className="max-h-64 mx-auto" />
+        <img
+          src={smallDisplayImage ? smallImage : largeImage}
+          alt={`${name} screenshot`}
+          className="max-h-64 mx-auto"
+        />
       </div>
       <div className="grid grid-cols-3 gap-x-2 pt-5">
         <LinkButton name="Try it out" href={website} smallSize={true} />

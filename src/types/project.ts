@@ -1,7 +1,8 @@
 export type Project = {
   name: string
   description: string
-  image: string
+  smallImage: string
+  largeImage: string
   madeWith: string[]
   github: string
   website: string
