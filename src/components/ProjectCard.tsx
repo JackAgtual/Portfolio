@@ -46,11 +46,13 @@ function ProjectCard({
             </ul>
           </div>
         </div>
-        <img
-          src={smallDisplayImage ? smallImage : largeImage}
-          alt={`${name} screenshot`}
-          className="max-h-64 mx-auto"
-        />
+        <div className="flex flex-col justify-center">
+          <img
+            src={smallDisplayImage ? smallImage : largeImage}
+            alt={`${name} screenshot`}
+            className="max-h-64 mx-auto"
+          />
+        </div>
       </div>
       <div className="grid grid-cols-3 gap-x-2 pt-5">
         <LinkButton name="Try it out" href={website} smallSize={true} />
