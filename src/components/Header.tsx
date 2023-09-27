@@ -38,7 +38,7 @@ function Header(
   return (
     <div
       ref={ref}
-      className={`sticky top-0 flex flex-col ${
+      className={`sticky top-0 flex flex-col z-10 ${
         navOpen ? 'h-screen' : ''
       } bg-secondary-bg text-secondary-text`}
     >

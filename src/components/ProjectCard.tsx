@@ -13,7 +13,7 @@ function ProjectCard({
   gif,
 }: ProjectCardProps) {
   return (
-    <div className=" bg-blue-100 p-5 rounded-lg max-w-5xl">
+    <div className=" bg-white p-5 rounded-lg max-w-5xl drop-shadow-xl">
       <h1 className="text-3xl font-bold md:hidden">{name}</h1>
       <div className="md:grid md:grid-cols-2">
         <div className="flex flex-col justify-center md:order-last">
