@@ -13,7 +13,7 @@ function ProjectCard({
   gif,
 }: ProjectCardProps) {
   return (
-    <div className=" bg-white p-5 rounded-lg max-w-5xl drop-shadow-xl">
+    <div className=" bg-[#eef2f7] p-5 rounded-lg max-w-5xl drop-shadow-xl">
       <h1 className="text-3xl font-bold md:hidden">{name}</h1>
       <div className="md:grid md:grid-cols-2">
         <div className="flex flex-col justify-center md:order-last">
@@ -23,11 +23,14 @@ function ProjectCard({
           <h1 className="text-3xl font-bold hidden md:block">{name}</h1>
           <p className="text-sm sm:text-base pt-3">{description}</p>
           <div>
-            <h2 className="text-lg font-semibold pt-5">Made with:</h2>
+            <h2 className="text-lg font-semibold pt-5 sm:pb-2">Made with:</h2>
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
               {madeWith.map((item) => {
                 return (
-                  <li key={item} className="text-sm sm:text-base break-words">
+                  <li
+                    key={item}
+                    className="px-2 py-1text-sm sm:text-base break-words rounded-md bg-tertiary-bg"
+                  >
                     {item}
                   </li>
                 )
