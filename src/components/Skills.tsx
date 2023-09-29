@@ -39,7 +39,7 @@ function Skills({}, ref: ForwardedRef<HTMLDivElement>) {
   return (
     <div ref={ref}>
       <SectionTitle>Some of my technical skills</SectionTitle>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-7 px-2">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-7">
         {skillsAndIcons.map(({ skill, icon }) => {
           return (
             <div key={skill} className="flex flex-col items-center space-y-1">

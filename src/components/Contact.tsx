@@ -55,7 +55,7 @@ function Contact({}, ref: ForwardedRef<HTMLDivElement>) {
         <form
           ref={form}
           onSubmit={handleSubmit}
-          className="flex flex-col space-y-5 max-w-screen-lg mx-auto px-5 md:px-10 py-5 rounded-xl"
+          className="flex flex-col space-y-5 max-w-screen-lg"
         >
           <label className="flex flex-col">
             Name
