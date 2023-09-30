@@ -6,3 +6,7 @@ body {
   /* @apply text-white; */
   @apply bg-primary-bg;
 }
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.9);
+}

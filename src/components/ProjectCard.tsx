@@ -1,5 +1,7 @@
+import { useState, useRef } from 'react'
 import { Project } from '../types/project'
 import LinkButton from './LinkButton'
+import VideoPlayer from './VideoPlayer'
 
 type ProjectCardProps = Project
 
@@ -11,6 +13,21 @@ function ProjectCard({
   github,
   deployedLinks,
 }: ProjectCardProps) {
+  const [modalOpen, setModalOpen] = useState(false)
+  const videoRef = useRef<HTMLDialogElement | null>(null)
+
+  const handleModalClick = () => {
+    if (videoRef === null) return
+
+    if (modalOpen) {
+      videoRef.current?.close()
+      setModalOpen(false)
+    } else {
+      videoRef.current?.showModal()
+      setModalOpen(true)
+    }
+  }
+
   return (
     <div className=" bg-[#eef2f7] p-5 rounded-lg max-w-5xl drop-shadow-xl">
       <h1 className="text-3xl font-bold md:hidden">{name}</h1>
@@ -60,10 +77,17 @@ function ProjectCard({
               name="Watch a demo"
               href={deployedLinks.demo}
               className="border max-sm:px-2 max-sm:text-sm"
+              onClick={handleModalClick}
             />
           </>
         )}
       </div>
+      <VideoPlayer
+        ref={videoRef}
+        name={name}
+        videoSrc={deployedLinks?.demo}
+        handleClose={handleModalClick}
+      />
     </div>
   )
 }

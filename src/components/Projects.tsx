@@ -15,7 +15,7 @@ const projects: Project[] = [
     github: 'https://github.com/JackAgtual/Travel-Planner-Frontend',
     deployedLinks: {
       website: 'https://jackagtual.github.io/Travel-Planner-Frontend/',
-      demo: 'https://youtu.be/UU_B3bPpOEM',
+      demo: 'https://www.youtube.com/embed/UU_B3bPpOEM?si=uWvPpprUJOJxUq5G',
     },
   },
   {
@@ -26,7 +26,7 @@ const projects: Project[] = [
     github: 'https://github.com/JackAgtual/Net-Worth-Tracker',
     deployedLinks: {
       website: 'https://jackagtual.github.io/Net-Worth-Tracker/',
-      demo: 'https://youtu.be/sASl6ts9Ad8',
+      demo: 'https://www.youtube.com/embed/sASl6ts9Ad8?si=CcrdipsHcnyxDeCU',
     },
   },
   {
