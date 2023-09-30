@@ -4,6 +4,8 @@ export type Project = {
   image: string
   madeWith: string[]
   github: string
-  website: string
-  gif: string
+  deployedLinks?: {
+    website: string
+    demo: string
+  }
 }

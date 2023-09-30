@@ -9,8 +9,7 @@ function ProjectCard({
   madeWith,
   image,
   github,
-  website,
-  gif,
+  deployedLinks,
 }: ProjectCardProps) {
   return (
     <div className=" bg-[#eef2f7] p-5 rounded-lg max-w-5xl drop-shadow-xl">
@@ -21,7 +20,12 @@ function ProjectCard({
         </div>
         <div>
           <h1 className="text-3xl font-bold hidden md:block">{name}</h1>
-          <p className="text-sm sm:text-base pt-3">{description}</p>
+          <div className="space-y-3 pt-3">
+            {deployedLinks === undefined && (
+              <p className="text-sm sm:text-base">This project is a work in progress.</p>
+            )}
+            <p className="text-sm sm:text-base">{description}</p>
+          </div>
           <div>
             <h2 className="text-lg font-semibold pt-5 sm:pb-2">Made with:</h2>
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
@@ -41,20 +45,24 @@ function ProjectCard({
       </div>
       <div className="grid grid-cols-3 gap-x-2 md:gap-x-5 pt-5">
         <LinkButton
-          name="Try it out"
-          href={website}
-          className="border max-sm:px-2 max-sm:text-sm"
-        />
-        <LinkButton
-          name="Watch a gif"
-          href={gif}
-          className="border max-sm:px-2 max-sm:text-sm"
-        />
-        <LinkButton
           name="Code"
           href={github}
           className="border max-sm:px-2 max-sm:text-sm"
         />
+        {deployedLinks !== undefined && (
+          <>
+            <LinkButton
+              name="Try it out"
+              href={deployedLinks.website}
+              className="border max-sm:px-2 max-sm:text-sm"
+            />
+            <LinkButton
+              name="Watch a demo"
+              href={deployedLinks.demo}
+              className="border max-sm:px-2 max-sm:text-sm"
+            />
+          </>
+        )}
       </div>
     </div>
   )

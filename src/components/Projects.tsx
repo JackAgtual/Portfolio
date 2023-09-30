@@ -11,8 +11,10 @@ const projects: Project[] = [
     image: laptopMock,
     madeWith: ['React', 'TypeScript', 'Tailwind CSS', 'Express JS'],
     github: 'https://github.com/JackAgtual/Travel-Planner-Frontend',
-    website: 'https://jackagtual.github.io/Travel-Planner-Frontend/',
-    gif: 'https://github.com/JackAgtual/Travel-Planner-Frontend',
+    deployedLinks: {
+      website: 'https://jackagtual.github.io/Travel-Planner-Frontend/',
+      demo: 'https://github.com/JackAgtual/Travel-Planner-Frontend',
+    },
   },
   {
     name: 'Net Worth Tracker',
@@ -20,8 +22,17 @@ const projects: Project[] = [
     madeWith: ['React', 'TypeScript', 'Tailwind CSS', 'Firebase'],
     image: laptopMock,
     github: 'https://github.com/JackAgtual/Net-Worth-Tracker',
-    website: 'https://jackagtual.github.io/Net-Worth-Tracker/',
-    gif: 'https://github.com/JackAgtual/Net-Worth-Tracker',
+    deployedLinks: {
+      website: 'https://jackagtual.github.io/Net-Worth-Tracker/',
+      demo: 'https://github.com/JackAgtual/Net-Worth-Tracker',
+    },
+  },
+  {
+    name: 'Static solver',
+    description: 'Solve static beam analysis problems.',
+    madeWith: ['React', 'TypeScript', 'Material UI'],
+    image: laptopMock,
+    github: 'https://github.com/JackAgtual/Static-Solver',
   },
 ]
 
