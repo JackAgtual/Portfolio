@@ -1,7 +1,8 @@
 import { useState, useRef } from 'react'
-import { Project } from '../types/project'
-import LinkButton from './LinkButton'
+import { Project } from '../../types/project'
 import VideoPlayer from './VideoPlayer'
+import ButtonSection from './ButtonSection'
+import MadeWithSection from './MadeWithSection'
 
 type ProjectCardProps = Project
 
@@ -43,45 +44,14 @@ function ProjectCard({
             )}
             <p className="text-sm sm:text-base">{description}</p>
           </div>
-          <div>
-            <h2 className="text-lg font-semibold pt-5 sm:pb-2">Made with:</h2>
-            <ul className="flex flex-wrap gap-x-6 gap-y-2">
-              {madeWith.map((item) => {
-                return (
-                  <li
-                    key={item}
-                    className="px-2 py-1text-sm sm:text-base break-words rounded-md bg-tertiary-bg"
-                  >
-                    {item}
-                  </li>
-                )
-              })}
-            </ul>
-          </div>
+          <MadeWithSection madeWith={madeWith} />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-x-2 md:gap-x-5 pt-5">
-        <LinkButton
-          name="Code"
-          href={github}
-          className="border max-sm:px-2 max-sm:text-sm"
-        />
-        {deployedLinks !== undefined && (
-          <>
-            <LinkButton
-              name="Try it out"
-              href={deployedLinks.website}
-              className="border max-sm:px-2 max-sm:text-sm"
-            />
-            <LinkButton
-              name="Watch a demo"
-              href={deployedLinks.demo}
-              className="border max-sm:px-2 max-sm:text-sm"
-              onClick={handleModalClick}
-            />
-          </>
-        )}
-      </div>
+      <ButtonSection
+        github={github}
+        deployedLinks={deployedLinks}
+        handleModalClick={handleModalClick}
+      />
       <VideoPlayer
         ref={videoRef}
         name={name}
