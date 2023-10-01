@@ -32,7 +32,11 @@ function VideoPlayer(
   }
 
   return (
-    <dialog ref={ref} onClick={handleModalClick} className="w-screen rounded-md">
+    <dialog
+      ref={ref}
+      onClick={handleModalClick}
+      className="w-screen sm:w-10/12 rounded-md"
+    >
       <div className="flex items-center justify-between px-4 py-2 bg-secondary-bg">
         <h1 className="text-lg text-secondary-text">{name}</h1>
         <AiOutlineClose
