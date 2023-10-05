@@ -1,4 +1,4 @@
-import { forwardRef, ForwardedRef } from 'react'
+import { useState, forwardRef, ForwardedRef } from 'react'
 import travelPlannerScreenshot from '../assets/TravelPlannerScreenshot.png'
 import netWorthTrackerScreenshot from '../assets/NetWorthTrackerScreenshot.png'
 import workingMemoji from '../assets/workingMemoji.png'
@@ -39,14 +39,39 @@ const projects: Project[] = [
 ]
 
 function Projects({}, ref: ForwardedRef<HTMLDivElement>) {
+  const [query, setQuery] = useState('')
+
+  const filteredProjects = projects.filter((project) => {
+    return project.madeWith.some((technology) =>
+      technology.toLowerCase().includes(query.toLowerCase()),
+    )
+  })
+
+  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value)
+  }
   return (
     <div ref={ref}>
       <SectionTitle>Here are some of my projects</SectionTitle>
-      <div className="grid grid-cols-1 gap-y-8">
-        {projects.map((project) => {
-          return <ProjectCard key={project.name} {...project} />
-        })}
-      </div>
+      <label className="flex flex-col pb-5">
+        Filter projects by technology
+        <input
+          type="search"
+          className="text-black px-2 py-2 rounded-sm border"
+          placeholder="Material UI"
+          value={query}
+          onChange={handleFilterChange}
+        ></input>
+      </label>
+      {filteredProjects.length > 0 ? (
+        <div className="grid grid-cols-1 gap-y-8">
+          {filteredProjects.map((project) => {
+            return <ProjectCard key={project.name} {...project} />
+          })}
+        </div>
+      ) : (
+        <h2>There aren't any projects that match that serach</h2>
+      )}
     </div>
   )
 }
