@@ -4,7 +4,9 @@ import VideoPlayer from './VideoPlayer'
 import ButtonSection from './ButtonSection'
 import MadeWithSection from './MadeWithSection'
 
-type ProjectCardProps = Project
+type ProjectCardProps = Project & {
+  madeWithFilter: string
+}
 
 function ProjectCard({
   name,
@@ -13,6 +15,7 @@ function ProjectCard({
   image,
   github,
   deployedLinks,
+  madeWithFilter,
 }: ProjectCardProps) {
   const [modalOpen, setModalOpen] = useState(false)
   const videoRef = useRef<HTMLDialogElement | null>(null)
@@ -44,7 +47,7 @@ function ProjectCard({
             )}
             <p className="text-sm sm:text-base">{description}</p>
           </div>
-          <MadeWithSection madeWith={madeWith} />
+          <MadeWithSection madeWith={madeWith} madeWithFilter={madeWithFilter} />
         </div>
       </div>
       <ButtonSection

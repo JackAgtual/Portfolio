@@ -66,7 +66,7 @@ function Projects({}, ref: ForwardedRef<HTMLDivElement>) {
       {filteredProjects.length > 0 ? (
         <div className="grid grid-cols-1 gap-y-8">
           {filteredProjects.map((project) => {
-            return <ProjectCard key={project.name} {...project} />
+            return <ProjectCard key={project.name} madeWithFilter={query} {...project} />
           })}
         </div>
       ) : (
