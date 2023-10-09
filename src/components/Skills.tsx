@@ -6,12 +6,12 @@ import {
   SiMui,
   SiFirebase,
   SiTailwindcss,
-  SiRedux,
+  // SiRedux,
   SiGit,
   SiNodedotjs,
   SiJest,
 } from 'react-icons/si'
-import { FaReact, FaJira, FaPython } from 'react-icons/fa'
+import { FaReact, FaJira, FaPython, FaLinux } from 'react-icons/fa'
 import SectionTitle from './SectionTitle'
 
 type SkillAndIcon = {
@@ -29,9 +29,10 @@ const skillsAndIcons: SkillAndIcon[] = [
   { skill: 'Material UI', icon: <SiMui /> },
   { skill: 'Tailwind CSS', icon: <SiTailwindcss /> },
   { skill: 'Firebase', icon: <SiFirebase /> },
-  { skill: 'Redux Toolkit', icon: <SiRedux /> },
+  // { skill: 'Redux Toolkit', icon: <SiRedux /> },
   { skill: 'Node JS & Express', icon: <SiNodedotjs /> },
   { skill: 'Python', icon: <FaPython /> },
+  { skill: 'Linux', icon: <FaLinux /> },
   { skill: 'Jira', icon: <FaJira /> },
 ]
 
