@@ -48,7 +48,7 @@ function App() {
       <main className="flex flex-col items-center px-5 pb-10 sm:px-10 md:px-20">
         <Home ref={homeRef} readMoreRef={aboutRef} offsetRef={headerRef} />
         <About ref={aboutRef} />
-        <div className="flex flex-col justify-center gap-y-16 pt-6 max-w-5xl">
+        <div className="flex flex-col justify-center gap-y-16 pt-6 w-full max-w-5xl">
           <Projects ref={projectsRef} />
           <Skills ref={skillsRef} />
           <Contact ref={contactRef} />
