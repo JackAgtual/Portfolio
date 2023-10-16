@@ -19,13 +19,12 @@ function VideoPlayer(
     const modalDimensions = ref.current?.getBoundingClientRect()
     if (modalDimensions === undefined) return
 
-    const clickX = e.clientX
-    const clickY = e.clientY
+    const { clientX, clientY } = e
     if (
-      clickX < modalDimensions?.left ||
-      clickX > modalDimensions?.right ||
-      clickY < modalDimensions?.bottom ||
-      clickY > modalDimensions?.top
+      clientX < modalDimensions.left ||
+      clientX > modalDimensions.right ||
+      clientY > modalDimensions.bottom ||
+      clientY < modalDimensions.top
     ) {
       handleClose()
     }
