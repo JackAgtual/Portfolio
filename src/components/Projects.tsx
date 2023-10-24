@@ -15,7 +15,7 @@ const projects: Project[] = [
     github: 'https://github.com/JackAgtual/Travel-Planner-Frontend',
     deployedLinks: {
       website: 'https://jackagtual.github.io/Travel-Planner-Frontend/',
-      demo: 'https://www.youtube.com/embed/UU_B3bPpOEM?si=uWvPpprUJOJxUq5G',
+      demo: 'https://youtu.be/YmtRWRamlSQ',
     },
   },
   {
