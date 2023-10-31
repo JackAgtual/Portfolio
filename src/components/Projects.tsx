@@ -32,7 +32,7 @@ const projects: Project[] = [
   {
     name: 'Static solver',
     description: 'Solve static beam analysis problems.',
-    madeWith: ['React', 'TypeScript', 'Material UI', 'Jest'],
+    madeWith: ['React', 'TypeScript', 'Jest', 'CSS'],
     image: workingMemoji,
     github: 'https://github.com/JackAgtual/Static-Solver',
   },
