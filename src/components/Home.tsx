@@ -8,7 +8,7 @@ import Scroll from '../utils/Scroll'
 const links: Link[] = [
   {
     name: 'Resume',
-    href: '#',
+    href: 'https://drive.google.com/file/d/1KDvNOFxYAwnZ73sXl3i6oT07E3P9zPYY/view?usp=sharing',
   },
   {
     name: 'LinkedIn',
