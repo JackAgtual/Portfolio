@@ -39,7 +39,7 @@ const projects: Project[] = [
       "GitHub Actions",
     ],
     image: newNetWorthTrackerScreenshot,
-    github: "https://github.com/JackAgtual/challenge-tracker",
+    github: "https://github.com/JackAgtual/net-worth",
   },
   {
     name: "Travel Planner",
