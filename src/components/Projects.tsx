@@ -1,55 +1,82 @@
-import { useState, forwardRef, ForwardedRef } from 'react'
-import travelPlannerScreenshot from '../assets/TravelPlannerScreenshot.png'
-import netWorthTrackerScreenshot from '../assets/NetWorthTrackerScreenshot.png'
-import workingMemoji from '../assets/workingMemoji.png'
-import ProjectCard from './ProjectCard'
-import { Project } from '../types/project'
-import SectionTitle from './SectionTitle'
+import { useState, forwardRef, ForwardedRef } from "react";
+import travelPlannerScreenshot from "../assets/TravelPlannerScreenshot.png";
+import netWorthTrackerScreenshot from "../assets/NetWorthTrackerScreenshot.png";
+import newNetWorthTrackerScreenshot from "../assets/NewNetWorthTrackerScreenshot.png";
+import workingMemoji from "../assets/workingMemoji.png";
+import ProjectCard from "./ProjectCard";
+import { Project } from "../types/project";
+import SectionTitle from "./SectionTitle";
 
 const projects: Project[] = [
   {
-    name: 'Travel Planner',
-    description: 'Plan your next adventure with Travel Planner.',
-    image: travelPlannerScreenshot,
-    madeWith: ['React', 'TypeScript', 'Tailwind CSS', 'Express JS'],
-    github: 'https://github.com/JackAgtual/Travel-Planner-Frontend',
-    deployedLinks: {
-      website: 'https://jackagtual.github.io/Travel-Planner-Frontend/',
-      demo: 'https://www.youtube.com/embed/YmtRWRamlSQ?si=myw2o5xhuz6fI8dF',
-    },
-  },
-  {
-    name: 'Net Worth Tracker',
-    description: 'Track your net worth over time to see how it changes.',
-    madeWith: ['React', 'TypeScript', 'Material UI', 'Firebase'],
-    image: netWorthTrackerScreenshot,
-    github: 'https://github.com/JackAgtual/Net-Worth-Tracker',
-    deployedLinks: {
-      website: 'https://jackagtual.github.io/Net-Worth-Tracker/',
-      demo: 'https://www.youtube.com/embed/sASl6ts9Ad8?si=CcrdipsHcnyxDeCU',
-    },
-  },
-  {
-    name: 'Static solver',
-    description: 'Solve static beam analysis problems.',
-    madeWith: ['React', 'TypeScript', 'Jest', 'CSS'],
+    name: "Challenge Tracker",
+    description:
+      "Participate in 75 Hard-style challenges with your friends and track your progres",
+    madeWith: [
+      "Next.js",
+      "TypeScript",
+      "Shadcn",
+      "Tailwind CSS",
+      "Spring Boot",
+      "PostgreSQL",
+      "Auth0",
+      "OpenAPI",
+      "GitHub Actions",
+    ],
     image: workingMemoji,
-    github: 'https://github.com/JackAgtual/Static-Solver',
+    github: "https://github.com/JackAgtual/challenge-tracker",
   },
-]
+  {
+    name: "Updated Net Worth Tracker",
+    description: "Track your net worth over time to see how it changes",
+    madeWith: [
+      "Next.js",
+      "TypeScript",
+      "Shadcn",
+      "Tailwind CSS",
+      "MongoDB",
+      "Better Auth",
+      "GitHub Actions",
+    ],
+    image: newNetWorthTrackerScreenshot,
+    github: "https://github.com/JackAgtual/challenge-tracker",
+  },
+  {
+    name: "Travel Planner",
+    description: "Plan your next adventure with Travel Planner.",
+    image: travelPlannerScreenshot,
+    madeWith: ["React", "TypeScript", "Tailwind CSS", "Express JS"],
+    github: "https://github.com/JackAgtual/Travel-Planner-Frontend",
+    deployedLinks: {
+      website: "https://jackagtual.github.io/Travel-Planner-Frontend/",
+      demo: "https://www.youtube.com/embed/YmtRWRamlSQ?si=myw2o5xhuz6fI8dF",
+    },
+  },
+  {
+    name: "[Deprecated] Net Worth Tracker",
+    description: "Track your net worth over time to see how it changes.",
+    madeWith: ["React", "TypeScript", "Material UI", "Firebase"],
+    image: netWorthTrackerScreenshot,
+    github: "https://github.com/JackAgtual/Net-Worth-Tracker",
+    deployedLinks: {
+      website: "https://jackagtual.github.io/Net-Worth-Tracker/",
+      demo: "https://www.youtube.com/embed/sASl6ts9Ad8?si=CcrdipsHcnyxDeCU",
+    },
+  },
+];
 
 function Projects({}, ref: ForwardedRef<HTMLDivElement>) {
-  const [query, setQuery] = useState('')
+  const [query, setQuery] = useState("");
 
   const filteredProjects = projects.filter((project) => {
     return project.madeWith.some((technology) =>
-      technology.toLowerCase().includes(query.toLowerCase()),
-    )
-  })
+      technology.toLowerCase().includes(query.toLowerCase())
+    );
+  });
 
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(e.target.value)
-  }
+    setQuery(e.target.value);
+  };
   return (
     <div ref={ref}>
       <SectionTitle>Here are some of my projects</SectionTitle>
@@ -66,14 +93,20 @@ function Projects({}, ref: ForwardedRef<HTMLDivElement>) {
       {filteredProjects.length > 0 ? (
         <div className="grid grid-cols-1 gap-y-8">
           {filteredProjects.map((project) => {
-            return <ProjectCard key={project.name} madeWithFilter={query} {...project} />
+            return (
+              <ProjectCard
+                key={project.name}
+                madeWithFilter={query}
+                {...project}
+              />
+            );
           })}
         </div>
       ) : (
         <h2>There aren't any projects that match that serach</h2>
       )}
     </div>
-  )
+  );
 }
 
-export default forwardRef(Projects)
+export default forwardRef(Projects);
