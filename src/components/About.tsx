@@ -1,5 +1,5 @@
-import { forwardRef, ForwardedRef } from 'react'
-import memoji from '../assets/memoji.png'
+import { forwardRef, ForwardedRef } from "react";
+import memoji from "../assets/memoji.png";
 
 function About({}, ref: ForwardedRef<HTMLDivElement>) {
   return (
@@ -24,18 +24,24 @@ function About({}, ref: ForwardedRef<HTMLDivElement>) {
               A bit about <span className="font-bold">me</span>
             </h1>
             <p>
-              I am a <span className="font-bold">frontend-focused web developer</span>. I
-              love building web applications that solve real world problems and making
-              those applications accessible to everyone. I am looking to pivot my career
-              to the web development domain and continue honing my web development skills.
+              I am a{" "}
+              <span className="font-bold">full stack software engineer</span>. I
+              love building web applications that solve real world problems and
+              making those applications accessible to everyone.
             </p>
             <p>
-              I currently work as a
-              <span className="font-bold"> systems engineer at Northrop Grumman</span>. I
-              write software in a language similar to C# or Java to create physics-based
-              models of aircraft interactions. I'm responsible for adding new features to
-              the models, conducting code reviews, and briefing analysis packages to
-              stakeholders.
+              I currently work as a full stack software engineer at Northrop
+              Grumman. I design and maintain RESTful and SOAP APIs in Spring
+              Boot. I also work with MongoDB and PostgreSQL for the persistence
+              layer. For the frontend I work with Java Swing desktop
+              applications and Java Server Pages web applications.
+            </p>
+            <p>
+              I previously wokred as a Modeling and Simulation Systems Engineer.
+              I wrote software in a language similar to C# or Java to create
+              physics-based models of aircraft interactions. I was responsible
+              for adding new features to the models, conducting code reviews,
+              and briefing analysis packages to stakeholders.
             </p>
             <p>
               I graduated summa cum laude from San Diego State University with a
@@ -45,7 +51,7 @@ function About({}, ref: ForwardedRef<HTMLDivElement>) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default forwardRef(About)
+export default forwardRef(About);
