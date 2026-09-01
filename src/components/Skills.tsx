@@ -1,57 +1,126 @@
-import { cloneElement, ReactElement, forwardRef, ForwardedRef } from 'react'
+import { cloneElement, ReactElement, forwardRef, ForwardedRef } from "react";
 import {
   SiHtml5,
   SiTypescript,
-  SiCss3,
   SiMui,
-  SiFirebase,
   SiTailwindcss,
-  // SiRedux,
   SiGit,
   SiNodedotjs,
   SiJest,
-} from 'react-icons/si'
-import { FaReact, FaJira, FaPython, FaLinux } from 'react-icons/fa'
-import SectionTitle from './SectionTitle'
+  SiPostgresql,
+  SiMongodb,
+  SiNextdotjs,
+  SiSpringboot,
+  SiDocker,
+  SiKubernetes,
+  SiAnsible,
+  SiJunit5,
+  SiTestinglibrary,
+  SiGnubash,
+  SiShadcnui,
+  SiCss,
+} from "react-icons/si";
+import { FaReact, FaJira, FaPython, FaLinux, FaJava } from "react-icons/fa";
+import SectionTitle from "./SectionTitle";
 
 type SkillAndIcon = {
-  skill: string
-  icon: ReactElement
-}
+  skill: string;
+  icon: ReactElement;
+};
 
-const skillsAndIcons: SkillAndIcon[] = [
-  { skill: 'HTML', icon: <SiHtml5 /> },
-  { skill: 'CSS', icon: <SiCss3 /> },
-  { skill: 'JavaScript & TypeScript', icon: <SiTypescript /> },
-  { skill: 'React JS', icon: <FaReact /> },
-  { skill: 'Git', icon: <SiGit /> },
-  { skill: 'Jest', icon: <SiJest /> },
-  { skill: 'Material UI', icon: <SiMui /> },
-  { skill: 'Tailwind CSS', icon: <SiTailwindcss /> },
-  { skill: 'Firebase', icon: <SiFirebase /> },
-  // { skill: 'Redux Toolkit', icon: <SiRedux /> },
-  { skill: 'Node JS & Express', icon: <SiNodedotjs /> },
-  { skill: 'Python', icon: <FaPython /> },
-  { skill: 'Linux', icon: <FaLinux /> },
-  { skill: 'Jira', icon: <FaJira /> },
-]
+type SkillCategory = {
+  name: string;
+  skills: SkillAndIcon[];
+};
+
+const skills: SkillCategory[] = [
+  {
+    name: "Languages",
+    skills: [
+      { skill: "JavaScript & TypeScript", icon: <SiTypescript /> },
+      { skill: "Java", icon: <FaJava /> },
+      { skill: "Python", icon: <FaPython /> },
+      { skill: "Bash", icon: <SiGnubash /> },
+    ],
+  },
+  {
+    name: "Frameworks",
+    skills: [
+      { skill: "React JS", icon: <FaReact /> },
+      { skill: "Next JS", icon: <SiNextdotjs /> },
+      { skill: "Spring Boot", icon: <SiSpringboot /> },
+      { skill: "Node JS & Express", icon: <SiNodedotjs /> },
+    ],
+  },
+  {
+    name: "Styling",
+    skills: [
+      { skill: "HTML", icon: <SiHtml5 /> },
+      { skill: "CSS", icon: <SiCss /> },
+      { skill: "Tailwind CSS", icon: <SiTailwindcss /> },
+      { skill: "Shadcn", icon: <SiShadcnui /> },
+      { skill: "Material UI", icon: <SiMui /> },
+    ],
+  },
+  {
+    name: "Testing",
+    skills: [
+      { skill: "Jest", icon: <SiJest /> },
+      { skill: "React Testing Library", icon: <SiTestinglibrary /> },
+      { skill: "JUnit", icon: <SiJunit5 /> },
+    ],
+  },
+  {
+    name: "Databases",
+    skills: [
+      { skill: "PostgreSQL", icon: <SiPostgresql /> },
+      { skill: "MongoDB", icon: <SiMongodb /> },
+    ],
+  },
+  {
+    name: "DevOps",
+    skills: [
+      { skill: "Docker", icon: <SiDocker /> },
+      { skill: "Kubernetes", icon: <SiKubernetes /> },
+      { skill: "Ansible", icon: <SiAnsible /> },
+      { skill: "Linux", icon: <FaLinux /> },
+    ],
+  },
+  {
+    name: "Misc",
+    skills: [
+      { skill: "Git", icon: <SiGit /> },
+      { skill: "Jira", icon: <FaJira /> },
+    ],
+  },
+];
 
 function Skills({}, ref: ForwardedRef<HTMLDivElement>) {
   return (
     <div ref={ref}>
       <SectionTitle>Some of my technical skills</SectionTitle>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-7">
-        {skillsAndIcons.map(({ skill, icon }) => {
-          return (
-            <div key={skill} className="flex flex-col items-center space-y-1">
-              <p className="text-center">{skill}</p>
-              {cloneElement(icon, { className: 'h-10 w-10' })}
+      {skills.map((skillCategory) => {
+        return (
+          <div>
+            <h2 className="text-xl my-8">{skillCategory.name}:</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-7">
+              {skillCategory.skills.map(({ skill, icon }) => {
+                return (
+                  <div
+                    key={skill}
+                    className="flex flex-col items-center space-y-1"
+                  >
+                    <p className="text-center">{skill}</p>
+                    {cloneElement(icon, { className: "h-10 w-10" })}
+                  </div>
+                );
+              })}
             </div>
-          )
-        })}
-      </div>
+          </div>
+        );
+      })}
     </div>
-  )
+  );
 }
 
-export default forwardRef(Skills)
+export default forwardRef(Skills);
