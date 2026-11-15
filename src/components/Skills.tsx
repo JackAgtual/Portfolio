@@ -1,26 +1,28 @@
-import { cloneElement, ReactElement, forwardRef, ForwardedRef } from "react";
+import { cloneElement, ForwardedRef, forwardRef, ReactElement } from "react";
+import { FaJava, FaJira, FaLinux, FaPython, FaReact } from "react-icons/fa";
 import {
-  SiHtml5,
-  SiTypescript,
-  SiMui,
-  SiTailwindcss,
-  SiGit,
-  SiNodedotjs,
-  SiJest,
-  SiPostgresql,
-  SiMongodb,
-  SiNextdotjs,
-  SiSpringboot,
-  SiDocker,
-  SiKubernetes,
   SiAnsible,
-  SiJunit5,
-  SiTestinglibrary,
-  SiGnubash,
-  SiShadcnui,
   SiCss,
+  SiDocker,
+  SiGit,
+  SiGithubactions,
+  SiGnubash,
+  SiHtml5,
+  SiJest,
+  SiJunit5,
+  SiKubernetes,
+  SiMongodb,
+  SiMui,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiPostgresql,
+  SiShadcnui,
+  SiSonarqubeserver,
+  SiSpringboot,
+  SiTailwindcss,
+  SiTestinglibrary,
+  SiTypescript,
 } from "react-icons/si";
-import { FaReact, FaJira, FaPython, FaLinux, FaJava } from "react-icons/fa";
 import SectionTitle from "./SectionTitle";
 
 type SkillAndIcon = {
@@ -37,8 +39,8 @@ const skills: SkillCategory[] = [
   {
     name: "Languages",
     skills: [
-      { skill: "JavaScript & TypeScript", icon: <SiTypescript /> },
       { skill: "Java", icon: <FaJava /> },
+      { skill: "JavaScript & TypeScript", icon: <SiTypescript /> },
       { skill: "Python", icon: <FaPython /> },
       { skill: "Bash", icon: <SiGnubash /> },
     ],
@@ -46,9 +48,9 @@ const skills: SkillCategory[] = [
   {
     name: "Frameworks",
     skills: [
+      { skill: "Spring Boot", icon: <SiSpringboot /> },
       { skill: "React JS", icon: <FaReact /> },
       { skill: "Next JS", icon: <SiNextdotjs /> },
-      { skill: "Spring Boot", icon: <SiSpringboot /> },
       { skill: "Node JS & Express", icon: <SiNodedotjs /> },
     ],
   },
@@ -65,9 +67,9 @@ const skills: SkillCategory[] = [
   {
     name: "Testing",
     skills: [
+      { skill: "JUnit", icon: <SiJunit5 /> },
       { skill: "Jest", icon: <SiJest /> },
       { skill: "React Testing Library", icon: <SiTestinglibrary /> },
-      { skill: "JUnit", icon: <SiJunit5 /> },
     ],
   },
   {
@@ -84,6 +86,8 @@ const skills: SkillCategory[] = [
       { skill: "Kubernetes", icon: <SiKubernetes /> },
       { skill: "Ansible", icon: <SiAnsible /> },
       { skill: "Linux", icon: <FaLinux /> },
+      { skill: "GitHub Actions", icon: <SiGithubactions /> },
+      { skill: "SonarQube", icon: <SiSonarqubeserver /> },
     ],
   },
   {
