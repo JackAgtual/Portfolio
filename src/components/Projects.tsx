@@ -35,6 +35,8 @@ const projects: Project[] = [
       "Shadcn",
       "Tailwind CSS",
       "MongoDB",
+      "PostgreSQL",
+      "Prisma",
       "Better Auth",
       "GitHub Actions",
     ],
